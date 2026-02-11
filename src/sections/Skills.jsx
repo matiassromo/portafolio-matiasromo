@@ -39,7 +39,7 @@ const Skills = () => {
                             whileHover={{ y: -5 }}
                             className="bg-slate-800/50 p-6 rounded-xl border border-white/5 hover:border-white/20 hover:bg-slate-800 transition-all group"
                         >
-                            <div className={`w - 12 h - 1 rounded - full ${skill.color} mb - 4 opacity - 70 group - hover: opacity - 100 transition - opacity`}></div>
+                            <div className={`w-12 h-1 rounded-full ${skill.color} mb-4 opacity-70 group-hover:opacity-100 transition-opacity`}></div>
                             <h4 className="font-bold text-lg text-white mb-1">{skill.name}</h4>
                             <span className="text-xs text-slate-500 uppercase tracking-wider">{skill.level}</span>
                         </motion.div>
