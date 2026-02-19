@@ -63,7 +63,7 @@ const Hero = () => {
                         <a href="https://github.com/matiassromo" target="_blank" className="text-slate-400 hover:text-brand-accent transition-colors">
                             <Github size={24} />
                         </a>
-                        <a href="https://linkedin.com/in/matias-romo" target="_blank" className="text-slate-400 hover:text-brand-accent transition-colors">
+                        <a href="https://linkedin.com/in/matiassromo" target="_blank" className="text-slate-400 hover:text-brand-accent transition-colors">
                             <Linkedin size={24} />
                         </a>
                     </motion.div>
@@ -83,7 +83,7 @@ const Hero = () => {
                             <img
                                 src="/profile.jpg"
                                 alt="Matías Romo"
-                                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-105"
+                                className="w-full h-full object-cover transition-all duration-500 transform group-hover:scale-105"
                                 onError={(e) => {
                                     e.target.onerror = null;
                                     e.target.src = "https://ui-avatars.com/api/?name=Matias+Romo&background=0f172a&color=3b82f6&size=512";

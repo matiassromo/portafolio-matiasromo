@@ -44,7 +44,7 @@ const Navbar = () => {
                         </a>
                     ))}
                     <a href="https://github.com/matiassromo" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors"><Github size={20} /></a>
-                    <a href="https://linkedin.com/in/matias-romo" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors"><Linkedin size={20} /></a>
+                    <a href="https://linkedin.com/in/matiasromo" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors"><Linkedin size={20} /></a>
                 </div>
 
                 {/* Mobile Toggle */}
@@ -79,7 +79,7 @@ const Navbar = () => {
                             ))}
                             <div className="flex gap-6 mt-4 pt-4 border-t border-white/10 w-full justify-center">
                                 <a href="https://github.com/matiassromo" target="_blank" className="text-slate-400 hover:text-white"><Github size={24} /></a>
-                                <a href="https://linkedin.com/in/matias-romo" target="_blank" className="text-slate-400 hover:text-white"><Linkedin size={24} /></a>
+                                <a href="https://linkedin.com/in/matiassromo" target="_blank" className="text-slate-400 hover:text-white"><Linkedin size={24} /></a>
                             </div>
                         </div>
                     </motion.div>

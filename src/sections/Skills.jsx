@@ -1,15 +1,38 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Shield, TrendingUp, Rocket } from 'lucide-react';
 
-const skills = [
-    { name: 'React Ecosystem', level: 'Avanzado', color: 'bg-blue-500' },
-    { name: 'JavaScript / ES6+', level: 'Avanzado', color: 'bg-yellow-400' },
-    { name: 'Tailwind CSS', level: 'Avanzado', color: 'bg-cyan-400' },
-    { name: 'Integración IA', level: 'Intermedio', color: 'bg-purple-500' },
-    { name: 'Automatización / Scripts', level: 'Intermedio', color: 'bg-green-500' },
-    { name: 'Git & GitHub', level: 'Avanzado', color: 'bg-orange-500' },
-    { name: 'Node.js Basics', level: 'En aprendizaje', color: 'bg-green-600' },
-    { name: 'SQL / Bases de Datos', level: 'Intermedio', color: 'bg-indigo-500' },
+const skillLevels = [
+    {
+        title: 'Dominio Fuerte',
+        subtitle: 'Manejo con seguridad y autonomía',
+        icon: Shield,
+        color: 'from-emerald-500 to-green-600',
+        borderColor: 'border-emerald-500/30',
+        bgColor: 'bg-emerald-500/10',
+        skills: ['HTML5', 'CSS3', 'Git', 'GitHub'],
+        description: 'Desarrollo frontend completo de forma autónoma. Estructuro proyectos, resuelvo problemas sin supervisión y aplico buenas prácticas de versionamiento en equipos.'
+    },
+    {
+        title: 'Dominio Intermedio-Alto',
+        subtitle: 'Buen nivel práctico para proyectos reales',
+        icon: TrendingUp,
+        color: 'from-blue-500 to-indigo-600',
+        borderColor: 'border-blue-500/30',
+        bgColor: 'bg-blue-500/10',
+        skills: ['JavaScript (ES6+)', 'Python', 'SQL / Bases de Datos'],
+        description: 'Desarrollo scripts, consumo y construyo APIs, automatizo tareas. Diseño esquemas relacionales, escribo consultas complejas con joins y optimizo queries.'
+    },
+    {
+        title: 'Dominio Intermedio-Bajo',
+        subtitle: 'Uso activo en proyectos académicos y personales',
+        icon: Rocket,
+        color: 'from-amber-500 to-orange-600',
+        borderColor: 'border-amber-500/30',
+        bgColor: 'bg-amber-500/10',
+        skills: ['React', 'Node.js', 'C#', 'Tailwind CSS', 'Bootstrap', 'CI/CD', 'Deploy & Hosting', 'Integración de IA'],
+        description: 'Construyo interfaces con React, configuro pipelines básicos, despliego aplicaciones e integro APIs de IA. En crecimiento constante con cada proyecto.'
+    }
 ];
 
 const Skills = () => {
@@ -22,28 +45,50 @@ const Skills = () => {
                     viewport={{ once: true }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-4xl font-bold mb-4">Mis <span className="text-brand-secondary">Habilidades</span></h2>
-                    <p className="text-slate-400 max-w-xl mx-auto">
-                        Herramientas y tecnologías que utilizo para dar vida a mis ideas.
+                    <h2 className="text-4xl font-bold mb-4">
+                        Habilidades <span className="text-brand-secondary">Técnicas</span>
+                    </h2>
+                    <p className="text-slate-400 max-w-2xl mx-auto">
+                        Stack técnico organizado por nivel de dominio real.
                     </p>
                 </motion.div>
 
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                    {skills.map((skill, index) => (
-                        <motion.div
-                            key={skill.name}
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.05 }}
-                            whileHover={{ y: -5 }}
-                            className="bg-slate-800/50 p-6 rounded-xl border border-white/5 hover:border-white/20 hover:bg-slate-800 transition-all group"
-                        >
-                            <div className={`w-12 h-1 rounded-full ${skill.color} mb-4 opacity-70 group-hover:opacity-100 transition-opacity`}></div>
-                            <h4 className="font-bold text-lg text-white mb-1">{skill.name}</h4>
-                            <span className="text-xs text-slate-500 uppercase tracking-wider">{skill.level}</span>
-                        </motion.div>
-                    ))}
+                <div className="grid lg:grid-cols-3 gap-8">
+                    {skillLevels.map((level, index) => {
+                        const IconComponent = level.icon;
+                        return (
+                            <motion.div
+                                key={level.title}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: index * 0.15 }}
+                                className={`relative p-6 rounded-xl border ${level.borderColor} ${level.bgColor} hover:bg-slate-800/50 transition-all`}
+                            >
+                                <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${level.color} flex items-center justify-center mb-4`}>
+                                    <IconComponent size={24} className="text-white" />
+                                </div>
+
+                                <h3 className="font-bold text-xl text-white mb-1">{level.title}</h3>
+                                <p className="text-sm text-slate-500 mb-5">{level.subtitle}</p>
+
+                                <div className="flex flex-wrap gap-2 mb-5">
+                                    {level.skills.map((skill) => (
+                                        <span
+                                            key={skill}
+                                            className="text-sm bg-slate-800 text-slate-200 px-3 py-1.5 rounded-lg border border-white/10"
+                                        >
+                                            {skill}
+                                        </span>
+                                    ))}
+                                </div>
+
+                                <p className="text-sm text-slate-400 leading-relaxed">
+                                    {level.description}
+                                </p>
+                            </motion.div>
+                        );
+                    })}
                 </div>
             </div>
         </section>

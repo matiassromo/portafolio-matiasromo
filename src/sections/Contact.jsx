@@ -34,7 +34,7 @@ const Contact = () => {
                         <div className="p-6 rounded-xl bg-white/5 border border-white/5 hover:border-brand-accent/30 transition-colors">
                             <Linkedin className="text-brand-secondary mb-4" size={32} />
                             <h4 className="font-bold text-white text-lg">LinkedIn</h4>
-                            <a href="https://linkedin.com/in/matias-romo" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors mt-2 inline-flex items-center gap-1">
+                            <a href="https://linkedin.com/in/matiassromo" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors mt-2 inline-flex items-center gap-1">
                                 Ver Perfil <ArrowUpRight size={14} />
                             </a>
                         </div>
