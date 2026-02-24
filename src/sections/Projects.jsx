@@ -5,17 +5,23 @@ import ProjectCard from '../components/ProjectCard';
 const projects = [
     {
         title: 'Piscina Zero Stress (Sitio Web)',
-        description: 'Página web informativa y comercial. Diseño moderno enfocado en la conversión de clientes, con horarios en tiempo real y catálogo de servicios interactivo.',
+        description: 'Sitio web comercial para un complejo recreativo. Incluye estado de apertura calculado dinámicamente, contador de visitas en vivo, galería de 9 servicios con modal de detalle, menú del bar, CTA directo a WhatsApp y slideshow animado con Framer Motion. Desplegado en Netlify.',
         tech: ['React', 'Vite', 'Tailwind', 'UX/UI'],
         github: 'https://github.com/matiassromo/web-pzs',
         link: 'https://piscinazerostress.com'
     },
     {
-        title: 'Zero Stress Pool Management System',
-        description: 'Sistema integral administrativo para digitalizar procesos de ventas, control de inventario y gestión operativa. Reemplazó procesos manuales por una solución centralizada y eficiente.',
-        tech: ['React', 'System Design', 'Business Logic', 'Admin Dashboard'],
-        github: 'https://github.com/matiassromo',
-        link: null
+        title: 'ZS System — Pool Management Platform',
+        description: 'Plataforma de gestión empresarial con arquitectura multi-servicio. Digitaliza los procesos de ventas y operaciones que antes se manejaban en cuadernos. Incluye dashboard administrativo, API REST, bot de análisis con IA (Gemini) y conector de Telegram. Actualmente en producción y mejora continua.',
+        tech: ['Next.js', '.NET', 'Python', 'Node.js', 'Telegram Bot'],
+        repos: [
+            { label: 'frontend', url: 'https://github.com/matiassromo/zsx-frontend' },
+            { label: 'backend', url: 'https://github.com/matiassromo/zsx-backend' },
+            { label: 'analyst-bot', url: 'https://github.com/matiassromo/analyst-bot-service' },
+            { label: 'bot-connector', url: 'https://github.com/matiassromo/bot-messaging-connector' },
+        ],
+        link: 'https://zsx-frontend-k1wm.onrender.com/dashboard',
+        apiLink: 'https://zsx-backend.onrender.com/swagger/index.html'
     }
 ];
 

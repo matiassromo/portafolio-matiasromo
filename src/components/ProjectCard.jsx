@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Github, ExternalLink, Folder } from 'lucide-react';
+import { Github, ExternalLink, Folder, Server } from 'lucide-react';
 
 const ProjectCard = ({ project, index }) => {
     return (
@@ -16,12 +16,17 @@ const ProjectCard = ({ project, index }) => {
                     <Folder size={40} className="text-brand-accent" />
                     <div className="flex gap-3">
                         {project.github && (
-                            <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors">
+                            <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors" title="GitHub">
                                 <Github size={20} />
                             </a>
                         )}
+                        {project.apiLink && (
+                            <a href={project.apiLink} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-brand-secondary transition-colors" title="API Docs">
+                                <Server size={20} />
+                            </a>
+                        )}
                         {project.link && (
-                            <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors">
+                            <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors" title="Live Demo">
                                 <ExternalLink size={20} />
                             </a>
                         )}
@@ -38,6 +43,23 @@ const ProjectCard = ({ project, index }) => {
                         </span>
                     ))}
                 </div>
+
+                {project.repos && (
+                    <div className="flex flex-wrap gap-2 mt-3 pt-3 border-t border-white/10">
+                        {project.repos.map((repo) => (
+                            <a
+                                key={repo.label}
+                                href={repo.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-1 text-xs text-slate-500 hover:text-brand-accent transition-colors"
+                            >
+                                <Github size={12} />
+                                {repo.label}
+                            </a>
+                        ))}
+                    </div>
+                )}
             </div>
         </motion.div>
     );
