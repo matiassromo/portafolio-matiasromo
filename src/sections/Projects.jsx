@@ -21,7 +21,8 @@ const projects = [
             { label: 'bot-connector', url: 'https://github.com/matiassromo/bot-messaging-connector' },
         ],
         link: 'https://zsx-frontend-k1wm.onrender.com/dashboard',
-        apiLink: 'https://zsx-backend.onrender.com/swagger/index.html'
+        apiLink: 'https://zsx-backend.onrender.com/swagger/index.html',
+        demo: { username: 'demo', password: 'demo123' }
     }
 ];
 

@@ -44,6 +44,16 @@ const ProjectCard = ({ project, index }) => {
                     ))}
                 </div>
 
+                {project.demo && (
+                    <div className="mt-3 pt-3 border-t border-white/10">
+                        <p className="text-xs font-semibold uppercase tracking-widest text-brand-accent mb-1.5">Demo</p>
+                        <div className="flex gap-4 text-xs text-slate-400">
+                            <span>user: <span className="font-mono text-slate-200">{project.demo.username}</span></span>
+                            <span>pass: <span className="font-mono text-slate-200">{project.demo.password}</span></span>
+                        </div>
+                    </div>
+                )}
+
                 {project.repos && (
                     <div className="flex flex-wrap gap-2 mt-3 pt-3 border-t border-white/10">
                         {project.repos.map((repo) => (
